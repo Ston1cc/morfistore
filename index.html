@@ -23,22 +23,65 @@
   .grad-6 { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%); }
   .grad-dark { background: linear-gradient(135deg, #2b1a3d 0%, #4c2a75 55%, #6b3fa0 100%); }
   .grad-brand { background: linear-gradient(135deg, #8b5cf6 0%, #7c3fbf 45%, #5b2f8f 100%); }
+  .icon-o { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .icon-f { fill: currentColor; stroke: none; }
+  .hero-blend {
+    -webkit-mask-image: radial-gradient(ellipse 68% 72% at center, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 68% 72% at center, black 55%, transparent 100%);
+  }
 </style>
 </head>
 <body class="bg-white text-slate-900 bg-mesh">
 
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-newspaper" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+<symbol id="i-feather" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="i-fire" viewBox="0 0 24 24"><path d="M12.5 2c1 3-2 4.5-2 8a3.5 3.5 0 007 0c0-1.5-.5-2.5-.5-2.5s1.5 1 1.5 4a5.5 5.5 0 01-11 0c0-6 4-7 5-9.5z"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+<symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="12" rx="4"/><circle cx="9.5" cy="13" r="1.3" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.3" fill="currentColor" stroke="none"/><path d="M9 17h6"/><line x1="12" y1="7" x2="12" y2="4"/><circle cx="12" cy="3" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 21v-6a2 2 0 012-2h12a2 2 0 012 2v6"/><path d="M4 21h16"/><path d="M4 15a4 4 0 018 0 4 4 0 018 0"/><line x1="9" y1="6" x2="9" y2="9"/><line x1="15" y1="6" x2="15" y2="9"/><circle cx="9" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="4" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="18" cy="11" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/></symbol>
+</defs>
+</svg>
+
 <!-- Top bar -->
 <div class="grad-brand text-white text-xs">
-  <div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-2">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-3">
     <div class="flex items-center gap-1.5">
-      <span>📦</span>
+      <svg class="w-3.5 h-3.5 icon-o"><use href="#i-package"/></svg>
       <span>Transport gratuit pentru comenzi peste 250 lei</span>
     </div>
     <div class="flex items-center gap-5">
-      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>ℹ️</span>Despre noi</a>
-      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>📰</span>Blog</a>
-      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>✉️</span>Contact</a>
-      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>📞</span>0765 123 456</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-info"/></svg>Despre noi</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-newspaper"/></svg>Blog</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-mail"/></svg>Contact</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-phone"/></svg>0765 123 456</a>
     </div>
   </div>
 </div>
@@ -47,7 +90,9 @@
 <header class="border-b border-slate-100">
   <div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-4">
     <a href="#" class="flex items-center gap-2.5">
-      <div class="w-11 h-11 rounded-full grad-brand shadow-md shadow-purple-200 flex items-center justify-center text-white text-xl">🤖</div>
+      <div class="w-11 h-11 rounded-full grad-brand shadow-md shadow-purple-200 flex items-center justify-center text-white">
+        <svg class="w-6 h-6 icon-o"><use href="#i-bot"/></svg>
+      </div>
       <div>
         <div class="text-2xl font-extrabold tracking-tight text-[#2b1a3d] leading-none">MORFI</div>
         <div class="text-[9px] tracking-[0.15em] text-slate-400 font-medium">DĂ FORMĂ IDEILOR TALE</div>
@@ -56,19 +101,19 @@
 
     <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-700">
       <a href="#" class="text-[#6b3fa0] font-semibold">Acasă</a>
-      <a href="#" class="flex items-center gap-1">Magazin <span class="text-xs">▾</span></a>
-      <a href="#" class="flex items-center gap-1">Colecții <span class="text-xs">▾</span></a>
+      <a href="#" class="flex items-center gap-1">Magazin <svg class="w-3.5 h-3.5 icon-o"><use href="#i-chevron-down"/></svg></a>
+      <a href="#" class="flex items-center gap-1">Colecții <svg class="w-3.5 h-3.5 icon-o"><use href="#i-chevron-down"/></svg></a>
       <a href="#">Personalizează</a>
       <a href="#">Pentru firme</a>
       <a href="#">Contact</a>
     </nav>
 
     <div class="flex items-center gap-5 text-slate-700">
-      <button aria-label="search">🔍</button>
-      <button aria-label="account">👤</button>
-      <button aria-label="wishlist">🤍</button>
+      <button aria-label="search"><svg class="w-5 h-5 icon-o"><use href="#i-search"/></svg></button>
+      <button aria-label="account"><svg class="w-5 h-5 icon-o"><use href="#i-user"/></svg></button>
+      <button aria-label="wishlist"><svg class="w-5 h-5 icon-o"><use href="#i-heart"/></svg></button>
       <button aria-label="cart" class="relative">
-        🛒
+        <svg class="w-5 h-5 icon-o"><use href="#i-cart"/></svg>
         <span class="absolute -top-2 -right-2 bg-[#6b3fa0] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
       </button>
       <button class="grad-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-purple-200">249,00 lei</button>
@@ -87,31 +132,37 @@
         Produse 3D personalizate pentru copii, casă, birou și cadouri memorabile.
       </p>
       <ul class="mt-5 space-y-2 text-slate-600">
-        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Personalizare în câteva minute</li>
-        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Materiale sigure pentru copii</li>
-        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Livrare rapidă în România</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0]" stroke-width="2.5"><use href="#i-check"/></svg> Personalizare în câteva minute</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0]" stroke-width="2.5"><use href="#i-check"/></svg> Materiale sigure pentru copii</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0]" stroke-width="2.5"><use href="#i-check"/></svg> Livrare rapidă în România</li>
       </ul>
       <button class="mt-7 grad-brand text-white font-semibold px-7 py-4 rounded-xl flex items-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-300/60 transition-shadow">
-        Creează produsul tău <span>→</span>
+        Creează produsul tău <svg class="w-4 h-4 icon-o" stroke-width="2.5"><use href="#i-arrow-right"/></svg>
       </button>
       <div class="mt-6 flex items-center gap-2 text-sm">
-        <span class="text-amber-400 tracking-tight">★★★★★</span>
+        <span class="flex items-center gap-0.5 text-amber-400">
+          <svg class="w-3.5 h-3.5 icon-f"><use href="#i-star"/></svg>
+          <svg class="w-3.5 h-3.5 icon-f"><use href="#i-star"/></svg>
+          <svg class="w-3.5 h-3.5 icon-f"><use href="#i-star"/></svg>
+          <svg class="w-3.5 h-3.5 icon-f"><use href="#i-star"/></svg>
+          <svg class="w-3.5 h-3.5 icon-f"><use href="#i-star"/></svg>
+        </span>
         <span class="font-semibold">4.9/5</span>
         <span class="text-slate-400">(peste 1.500 de clienți)</span>
       </div>
     </div>
 
-    <div class="relative">
-      <div class="absolute -inset-8 grad-4 rounded-full blur-3xl opacity-50 -z-10"></div>
-      <div class="rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100 aspect-[6/5] flex items-center justify-center overflow-hidden shadow-xl shadow-purple-100">
-        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-cover">
+    <div class="relative lg:-mr-10">
+      <div class="absolute inset-0 grad-1 blur-3xl opacity-40 scale-90 -z-10"></div>
+      <div class="aspect-[6/5] flex items-center justify-center">
+        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-contain hero-blend scale-125">
       </div>
       <div class="absolute -bottom-6 right-10 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
-        <div class="w-9 h-9 rounded-full grad-3 -mr-2 border-2 border-white flex items-center justify-center text-sm">🙂</div>
-        <div class="w-9 h-9 rounded-full grad-5 border-2 border-white flex items-center justify-center text-sm">😊</div>
+        <div class="w-9 h-9 rounded-full grad-3 -mr-2 border-2 border-white flex items-center justify-center text-white"><svg class="w-4 h-4 icon-o"><use href="#i-user"/></svg></div>
+        <div class="w-9 h-9 rounded-full grad-5 border-2 border-white flex items-center justify-center text-white"><svg class="w-4 h-4 icon-o"><use href="#i-user"/></svg></div>
         <div class="text-sm leading-tight">
           <div class="font-semibold text-slate-800">Peste 4.000 de produse</div>
-          <div class="text-slate-500">livrate cu drag 🤍</div>
+          <div class="text-slate-500 flex items-center gap-1">livrate cu drag <svg class="w-3.5 h-3.5 icon-f text-pink-300"><use href="#i-heart"/></svg></div>
         </div>
       </div>
     </div>
@@ -122,35 +173,35 @@
 <section class="border-y border-slate-100 bg-white">
   <div class="max-w-[1280px] mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
     <div class="flex items-center gap-3">
-      <span class="text-2xl">🍃</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-feather"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Materiale premium</div>
         <div class="text-slate-400 text-xs">PLA eco &amp; non-toxic</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-2xl">🛡️</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-shield"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Sigur pentru copii</div>
         <div class="text-slate-400 text-xs">Testate și certificate</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-2xl">🏅</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-award"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Garanție 100%</div>
         <div class="text-slate-400 text-xs">Retur fără griji 14 zile</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-2xl">🤍</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-heart"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Fabricat în România</div>
         <div class="text-slate-400 text-xs">Cu pasiune, local</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-2xl">🎁</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-gift"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Ambalare premium</div>
         <div class="text-slate-400 text-xs">Perfect pentru cadouri</div>
@@ -165,35 +216,35 @@
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-0 sm:gap-2 items-start relative">
     <div class="text-center relative px-2">
       <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">1</span>
-      <div class="rounded-2xl overflow-hidden grad-1 aspect-square flex items-center justify-center text-5xl">
-        🦴
+      <div class="rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+        <img src="img/step_keychain.png" alt="Alegi produsul" class="w-full h-full object-cover">
       </div>
       <p class="mt-3 text-sm font-medium text-slate-700">Alegi produsul preferat</p>
-      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+      <svg class="hidden sm:block w-5 h-5 icon-o absolute top-[42px] -right-3 z-10 text-slate-300"><use href="#i-arrow-right"/></svg>
     </div>
     <div class="text-center relative px-2">
       <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">2</span>
-      <div class="rounded-2xl overflow-hidden grad-2 aspect-square flex items-center justify-center text-5xl">
-        🎨
+      <div class="rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+        <img src="img/step_customize.png" alt="Personalizezi" class="w-full h-full object-cover">
       </div>
       <p class="mt-3 text-sm font-medium text-slate-700">Personalizezi culoarea, numele sau mesajul</p>
-      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+      <svg class="hidden sm:block w-5 h-5 icon-o absolute top-[42px] -right-3 z-10 text-slate-300"><use href="#i-arrow-right"/></svg>
     </div>
     <div class="text-center relative px-2">
       <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">3</span>
-      <div class="rounded-2xl overflow-hidden grad-4 aspect-square flex items-center justify-center text-5xl">
-        👀
+      <div class="rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+        <img src="img/step_keychain.png" alt="Previzualizare" class="w-full h-full object-cover">
       </div>
       <p class="mt-3 text-sm font-medium text-slate-700">Vezi previzualizarea în timp real</p>
-      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+      <svg class="hidden sm:block w-5 h-5 icon-o absolute top-[42px] -right-3 z-10 text-slate-300"><use href="#i-arrow-right"/></svg>
     </div>
     <div class="text-center relative px-2">
       <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">4</span>
-      <div class="rounded-2xl overflow-hidden grad-dark aspect-square flex items-center justify-center text-5xl">
-        🖨️
+      <div class="rounded-2xl overflow-hidden aspect-square flex items-center justify-center">
+        <img src="img/step_printer.png" alt="Imprimare" class="w-full h-full object-cover">
       </div>
       <p class="mt-3 text-sm font-medium text-slate-700">Noi imprimăm cu grijă și pasiune</p>
-      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+      <svg class="hidden sm:block w-5 h-5 icon-o absolute top-[42px] -right-3 z-10 text-slate-300"><use href="#i-arrow-right"/></svg>
     </div>
     <div class="text-center relative px-2">
       <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">5</span>
@@ -218,19 +269,25 @@
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
     <div class="text-center">
-      <div class="rounded-2xl overflow-hidden grad-2 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🏠</div>
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/col_home.png" class="w-full h-full object-cover" alt="MORFI Home">
+      </div>
       <div class="font-semibold text-slate-800 text-sm">MORFI Home</div>
       <div class="text-slate-400 text-xs mb-3">Decorațiuni și accesorii pentru casă</div>
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
     <div class="text-center">
-      <div class="rounded-2xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🎁</div>
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/step_keychain.png" class="w-full h-full object-cover" alt="MORFI Gifts">
+      </div>
       <div class="font-semibold text-slate-800 text-sm">MORFI Gifts</div>
       <div class="text-slate-400 text-xs mb-3">Cadouri personalizate pentru orice ocazie</div>
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
     <div class="text-center">
-      <div class="rounded-2xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🖊️</div>
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/col_office.png" class="w-full h-full object-cover" alt="MORFI Office">
+      </div>
       <div class="font-semibold text-slate-800 text-sm">MORFI Office</div>
       <div class="text-slate-400 text-xs mb-3">Organizare și accesorii pentru birou</div>
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
@@ -244,72 +301,100 @@
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
     <div class="text-center">
-      <div class="rounded-2xl overflow-hidden grad-6 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🧵</div>
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/col_lab.png" class="w-full h-full object-cover" alt="MORFI Lab">
+      </div>
       <div class="font-semibold text-slate-800 text-sm">MORFI Lab</div>
       <div class="text-slate-400 text-xs mb-3">Filamente și accesorii pentru pasionați</div>
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
   </div>
   <div class="text-right mt-4">
-    <a href="#" class="text-[#6b3fa0] text-sm font-semibold">Vezi toate colecțiile →</a>
+    <a href="#" class="text-[#6b3fa0] text-sm font-semibold inline-flex items-center gap-1">Vezi toate colecțiile <svg class="w-3.5 h-3.5 icon-o" stroke-width="2.5"><use href="#i-arrow-right"/></svg></a>
   </div>
 </section>
 
 <!-- Bestsellers -->
 <section class="max-w-[1280px] mx-auto px-6 py-8">
   <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-extrabold text-[#241533]">Bestsellere 🔥</h2>
+    <h2 class="text-2xl font-extrabold text-[#241533] flex items-center gap-2">Bestsellere <svg class="w-6 h-6 icon-f text-orange-500"><use href="#i-fire"/></svg></h2>
     <div class="flex items-center gap-3">
-      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center">←</button>
-      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center">→</button>
+      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-500"><svg class="w-4 h-4 icon-o"><use href="#i-arrow-left"/></svg></button>
+      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-500"><svg class="w-4 h-4 icon-o"><use href="#i-arrow-right"/></svg></button>
     </div>
   </div>
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <span class="absolute top-5 left-5 bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-md">Bestseller</span>
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
         <img src="img/col_kids_dragon.png" class="w-full h-full object-cover" alt="Dragon Articulat">
+        <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-md">Bestseller</span>
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
       </div>
       <div class="font-semibold text-sm text-slate-800">Dragon Articulat Mythic Series</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(24)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(24)</span>
+      </div>
       <div class="font-bold text-slate-800">149,00 lei</div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl">🦄</div>
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/bestseller_unicorn.png" class="w-full h-full object-cover" alt="Suport Pixuri Unicorn">
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
+      </div>
       <div class="font-semibold text-sm text-slate-800">Suport Pixuri Unicorn</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(18)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(18)</span>
+      </div>
       <div class="font-bold text-slate-800">69,00 lei</div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden grad-dark aspect-square mb-3 flex items-center justify-center text-5xl">💡</div>
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/bestseller_lamp.png" class="w-full h-full object-cover" alt="Lampă de Veghe MORFI">
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
+      </div>
       <div class="font-semibold text-sm text-slate-800">Lampă de Veghe MORFI</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(37)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(37)</span>
+      </div>
       <div class="font-bold text-slate-800">119,00 lei</div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl">🦴</div>
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/step_keychain.png" class="w-full h-full object-cover" alt="Breloc Personalizat">
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
+      </div>
       <div class="font-semibold text-sm text-slate-800">Breloc Personalizat cu Nume</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(52)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(52)</span>
+      </div>
       <div class="font-bold text-slate-800">49,00 lei</div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden grad-4 aspect-square mb-3 flex items-center justify-center text-5xl">🖊️</div>
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/col_office.png" class="w-full h-full object-cover" alt="Organizer Birou Modular">
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
+      </div>
       <div class="font-semibold text-sm text-slate-800">Organizer Birou Modular</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(21)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(21)</span>
+      </div>
       <div class="font-bold text-slate-800">99,00 lei</div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-3 relative">
-      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
-      <div class="rounded-xl overflow-hidden aspect-square mb-3">
-        <img src="img/step_box.png" class="w-full h-full object-cover" alt="Cutie Amintiri">
+    <div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/bestseller_memorybox.png" class="w-full h-full object-cover" alt="Cutie Amintiri">
+        <button class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center text-slate-400"><svg class="w-3.5 h-3.5 icon-o"><use href="#i-heart"/></svg></button>
       </div>
       <div class="font-semibold text-sm text-slate-800">Cutie Amintiri Personalizată</div>
-      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(16)</span></div>
+      <div class="flex items-center gap-0.5 text-amber-400 my-1">
+        <svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg><svg class="w-3 h-3 icon-f"><use href="#i-star"/></svg>
+        <span class="text-slate-400 text-xs ml-1">(16)</span>
+      </div>
       <div class="font-bold text-slate-800">129,00 lei</div>
     </div>
   </div>
@@ -320,21 +405,25 @@
   <div class="grid lg:grid-cols-3 gap-5">
     <div class="grad-brand rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg shadow-purple-200">
       <div>
-        <h3 class="text-xl font-bold">Oameni fericiți, produse create cu pasiune 💜</h3>
+        <h3 class="text-xl font-bold flex items-center gap-2">Oameni fericiți, produse create cu pasiune <svg class="w-5 h-5 icon-f"><use href="#i-heart"/></svg></h3>
       </div>
       <button class="mt-6 bg-white text-[#6b3fa0] font-semibold text-sm px-5 py-2.5 rounded-full w-fit">Vezi recenziile</button>
     </div>
     <div class="rounded-2xl overflow-hidden grid grid-cols-3 gap-1">
-      <div class="grad-3 flex items-center justify-center text-4xl">😊</div>
-      <div class="grad-5 flex items-center justify-center text-4xl">🥰</div>
-      <div class="grad-6 flex items-center justify-center text-4xl">😄</div>
+      <img src="img/review_1.png" class="w-full h-full object-cover" alt="Client fericit MORFI">
+      <img src="img/review_2.png" class="w-full h-full object-cover" alt="Client fericit MORFI">
+      <img src="img/review_3.png" class="w-full h-full object-cover" alt="Client fericit MORFI">
     </div>
     <div class="flex flex-col items-center justify-center gap-1 text-center">
       <div class="text-3xl font-extrabold">4.9 / 5</div>
-      <div class="text-amber-400">★★★★★</div>
+      <div class="flex items-center gap-0.5 text-amber-400">
+        <svg class="w-4 h-4 icon-f"><use href="#i-star"/></svg><svg class="w-4 h-4 icon-f"><use href="#i-star"/></svg><svg class="w-4 h-4 icon-f"><use href="#i-star"/></svg><svg class="w-4 h-4 icon-f"><use href="#i-star"/></svg><svg class="w-4 h-4 icon-f"><use href="#i-star"/></svg>
+      </div>
       <div class="text-slate-400 text-xs">Bazat pe 1.520 de recenzii</div>
-      <div class="flex items-center gap-3 mt-2 text-slate-400 text-lg">
-        <span>G</span><span>📘</span><span>🎵</span>
+      <div class="flex items-center gap-3 mt-2 text-slate-400">
+        <svg class="w-4 h-4 icon-o"><use href="#i-globe"/></svg>
+        <svg class="w-4 h-4 icon-f"><use href="#i-facebook"/></svg>
+        <svg class="w-4 h-4 icon-o"><use href="#i-music"/></svg>
       </div>
     </div>
   </div>
@@ -347,7 +436,7 @@
       <input type="email" placeholder="Emailul tău" class="flex-1 rounded-full px-4 py-2.5 border border-slate-200 text-sm bg-white/70">
       <button class="grad-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full whitespace-nowrap shadow-md shadow-purple-200">Abonează-te</button>
     </div>
-    <div class="w-10 h-10 rounded-full grad-brand flex items-center justify-center text-white shadow-md">🤖</div>
+    <div class="w-10 h-10 rounded-full grad-brand flex items-center justify-center text-white shadow-md"><svg class="w-5 h-5 icon-o"><use href="#i-bot"/></svg></div>
   </div>
 </section>
 
@@ -355,7 +444,7 @@
 <section class="max-w-[1280px] mx-auto px-6 py-8">
   <div class="flex items-center justify-between mb-6">
     <h2 class="text-2xl font-extrabold text-[#241533]">Pachete cadou gata de bucurie</h2>
-    <a href="#" class="text-[#6b3fa0] text-sm font-semibold">Vezi toate pachetele →</a>
+    <a href="#" class="text-[#6b3fa0] text-sm font-semibold inline-flex items-center gap-1">Vezi toate pachetele <svg class="w-3.5 h-3.5 icon-o" stroke-width="2.5"><use href="#i-arrow-right"/></svg></a>
   </div>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
     <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
@@ -366,17 +455,23 @@
       <div class="font-bold text-slate-800 mt-1">129,00 lei</div>
     </div>
     <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
-      <div class="rounded-xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl">🎂</div>
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/gift_birthday.png" class="w-full h-full object-cover" alt="Birthday Box">
+      </div>
       <div class="font-semibold text-sm text-slate-800">Birthday Box</div>
       <div class="font-bold text-slate-800 mt-1">149,00 lei</div>
     </div>
     <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
-      <div class="rounded-xl overflow-hidden grad-dark aspect-square mb-3 flex items-center justify-center text-5xl">🎮</div>
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/gift_gamer.png" class="w-full h-full object-cover" alt="Gamer Box">
+      </div>
       <div class="font-semibold text-sm text-slate-800">Gamer Box</div>
       <div class="font-bold text-slate-800 mt-1">159,00 lei</div>
     </div>
     <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
-      <div class="rounded-xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl">👶</div>
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/gift_baby.png" class="w-full h-full object-cover" alt="Baby Gift Box">
+      </div>
       <div class="font-semibold text-sm text-slate-800">Baby Gift Box</div>
       <div class="font-bold text-slate-800 mt-1">139,00 lei</div>
     </div>
@@ -387,28 +482,28 @@
 <section class="max-w-[1280px] mx-auto px-6 py-6 border-t border-slate-100">
   <div class="grid grid-cols-2 sm:grid-cols-5 gap-6">
     <div class="flex items-center gap-3">
-      <span class="text-xl">🔒</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-lock"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Plată securizată</div>
         <div class="text-slate-400 text-xs">100% sigură</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-xl">↩️</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-undo"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Retur simplu</div>
         <div class="text-slate-400 text-xs">în 14 zile</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-xl">🎧</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-headset"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Suport clienți</div>
         <div class="text-slate-400 text-xs">Rapid și prietenos</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-xl">🚚</span>
+      <svg class="w-6 h-6 icon-o text-[#6b3fa0] shrink-0"><use href="#i-truck"/></svg>
       <div class="text-sm leading-tight">
         <div class="font-semibold">Livrare rapidă</div>
         <div class="text-slate-400 text-xs">1-3 zile lucrătoare</div>
@@ -422,7 +517,7 @@
   <div class="max-w-[1280px] mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
     <div>
       <div class="flex items-center gap-2.5 mb-3">
-        <div class="w-9 h-9 rounded-full grad-brand flex items-center justify-center text-white">🤖</div>
+        <div class="w-9 h-9 rounded-full grad-brand flex items-center justify-center text-white"><svg class="w-5 h-5 icon-o"><use href="#i-bot"/></svg></div>
         <div>
           <div class="text-lg font-extrabold leading-none">MORFI</div>
           <div class="text-[8px] tracking-[0.15em] text-slate-400">DĂ FORMĂ IDEILOR TALE</div>
@@ -430,7 +525,9 @@
       </div>
       <p class="text-slate-400 text-sm leading-relaxed">MORFI este locul unde creativitatea întâlnește tehnologia. Imprimăm idei, creăm emoții și aducem bucurie.</p>
       <div class="flex items-center gap-3 mt-4 text-slate-300">
-        <span>📘</span><span>📷</span><span>🎵</span>
+        <svg class="w-4 h-4 icon-f"><use href="#i-facebook"/></svg>
+        <svg class="w-4 h-4 icon-o"><use href="#i-instagram"/></svg>
+        <svg class="w-4 h-4 icon-o"><use href="#i-music"/></svg>
       </div>
     </div>
     <div>
