@@ -27,8 +27,8 @@
   .icon-o { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .icon-f { fill: currentColor; stroke: none; }
   .hero-blend {
-    -webkit-mask-image: radial-gradient(ellipse 68% 72% at center, black 55%, transparent 100%);
-    mask-image: radial-gradient(ellipse 68% 72% at center, black 55%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 62% at center, black 35%, transparent 100%);
+    mask-image: radial-gradient(ellipse 60% 62% at center, black 35%, transparent 100%);
   }
 </style>
 </head>
@@ -150,7 +150,8 @@
 
 <main>
 <!-- Hero -->
-<section class="max-w-[1280px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-8 overflow-hidden">
+<section class="relative max-w-[1280px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-8 overflow-hidden">
+  <div class="absolute inset-0 -z-10" style="background: radial-gradient(70% 95% at 76% 45%, rgba(237,233,254,0.95), rgba(237,233,254,0) 72%), linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(243,232,255,0.65) 100%);"></div>
   <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
     <div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-[#241533]">
@@ -181,9 +182,8 @@
     </div>
 
     <div class="relative lg:-mr-10">
-      <div class="absolute inset-0 grad-1 blur-3xl opacity-40 scale-90 -z-10"></div>
       <div class="aspect-[6/5] flex items-center justify-center">
-        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-contain hero-blend lg:scale-125">
+        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-contain hero-blend lg:scale-[1.0625]">
       </div>
       <div class="absolute -bottom-4 sm:-bottom-6 right-2 sm:right-10 bg-white rounded-2xl shadow-lg px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3">
         <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full grad-3 -mr-2 border-2 border-white flex items-center justify-center text-white shrink-0"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 icon-o"><use href="#i-user"/></svg></div>
