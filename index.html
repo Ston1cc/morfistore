@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MORFI - Dă formă ideilor tale</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Poppins', sans-serif; }
+  .bg-mesh {
+    background:
+      radial-gradient(600px circle at 85% 0%, rgba(124,63,191,0.10), transparent 60%),
+      radial-gradient(500px circle at 0% 30%, rgba(219,39,119,0.06), transparent 55%),
+      radial-gradient(700px circle at 100% 70%, rgba(107,63,160,0.08), transparent 55%);
+  }
+  .grad-1 { background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 55%, #ddd6fe 100%); }
+  .grad-2 { background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 55%, #f5d0fe 100%); }
+  .grad-3 { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 55%, #f9a8d4 100%); }
+  .grad-4 { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 55%, #c4b5fd 100%); }
+  .grad-5 { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 55%, #fcd34d 100%); }
+  .grad-6 { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%); }
+  .grad-dark { background: linear-gradient(135deg, #2b1a3d 0%, #4c2a75 55%, #6b3fa0 100%); }
+  .grad-brand { background: linear-gradient(135deg, #8b5cf6 0%, #7c3fbf 45%, #5b2f8f 100%); }
+</style>
+</head>
+<body class="bg-white text-slate-900 bg-mesh">
+
+<!-- Top bar -->
+<div class="grad-brand text-white text-xs">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-2">
+    <div class="flex items-center gap-1.5">
+      <span>📦</span>
+      <span>Transport gratuit pentru comenzi peste 250 lei</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>ℹ️</span>Despre noi</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>📰</span>Blog</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>✉️</span>Contact</a>
+      <a href="#" class="flex items-center gap-1 hover:opacity-80"><span>📞</span>0765 123 456</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header / Nav -->
+<header class="border-b border-slate-100">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-4">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-11 h-11 rounded-full grad-brand shadow-md shadow-purple-200 flex items-center justify-center text-white text-xl">🤖</div>
+      <div>
+        <div class="text-2xl font-extrabold tracking-tight text-[#2b1a3d] leading-none">MORFI</div>
+        <div class="text-[9px] tracking-[0.15em] text-slate-400 font-medium">DĂ FORMĂ IDEILOR TALE</div>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+      <a href="#" class="text-[#6b3fa0] font-semibold">Acasă</a>
+      <a href="#" class="flex items-center gap-1">Magazin <span class="text-xs">▾</span></a>
+      <a href="#" class="flex items-center gap-1">Colecții <span class="text-xs">▾</span></a>
+      <a href="#">Personalizează</a>
+      <a href="#">Pentru firme</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-5 text-slate-700">
+      <button aria-label="search">🔍</button>
+      <button aria-label="account">👤</button>
+      <button aria-label="wishlist">🤍</button>
+      <button aria-label="cart" class="relative">
+        🛒
+        <span class="absolute -top-2 -right-2 bg-[#6b3fa0] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+      </button>
+      <button class="grad-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-purple-200">249,00 lei</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="max-w-[1280px] mx-auto px-6 pt-10 pb-8">
+  <div class="grid lg:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-5xl font-extrabold leading-tight text-[#241533]">
+        Transformăm ideile tale <span class="text-[#6b3fa0]">în obiecte unice.</span>
+      </h1>
+      <p class="mt-5 text-slate-500 text-lg leading-relaxed">
+        Produse 3D personalizate pentru copii, casă, birou și cadouri memorabile.
+      </p>
+      <ul class="mt-5 space-y-2 text-slate-600">
+        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Personalizare în câteva minute</li>
+        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Materiale sigure pentru copii</li>
+        <li class="flex items-center gap-2"><span class="text-[#6b3fa0]">✔</span> Livrare rapidă în România</li>
+      </ul>
+      <button class="mt-7 grad-brand text-white font-semibold px-7 py-4 rounded-xl flex items-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-300/60 transition-shadow">
+        Creează produsul tău <span>→</span>
+      </button>
+      <div class="mt-6 flex items-center gap-2 text-sm">
+        <span class="text-amber-400 tracking-tight">★★★★★</span>
+        <span class="font-semibold">4.9/5</span>
+        <span class="text-slate-400">(peste 1.500 de clienți)</span>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -inset-8 grad-4 rounded-full blur-3xl opacity-50 -z-10"></div>
+      <div class="rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100 aspect-[6/5] flex items-center justify-center overflow-hidden shadow-xl shadow-purple-100">
+        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -bottom-6 right-10 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full grad-3 -mr-2 border-2 border-white flex items-center justify-center text-sm">🙂</div>
+        <div class="w-9 h-9 rounded-full grad-5 border-2 border-white flex items-center justify-center text-sm">😊</div>
+        <div class="text-sm leading-tight">
+          <div class="font-semibold text-slate-800">Peste 4.000 de produse</div>
+          <div class="text-slate-500">livrate cu drag 🤍</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust badges -->
+<section class="border-y border-slate-100 bg-white">
+  <div class="max-w-[1280px] mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">🍃</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Materiale premium</div>
+        <div class="text-slate-400 text-xs">PLA eco &amp; non-toxic</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">🛡️</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Sigur pentru copii</div>
+        <div class="text-slate-400 text-xs">Testate și certificate</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">🏅</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Garanție 100%</div>
+        <div class="text-slate-400 text-xs">Retur fără griji 14 zile</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">🤍</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Fabricat în România</div>
+        <div class="text-slate-400 text-xs">Cu pasiune, local</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">🎁</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Ambalare premium</div>
+        <div class="text-slate-400 text-xs">Perfect pentru cadouri</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="max-w-[1280px] mx-auto px-6 py-14">
+  <h2 class="text-3xl font-extrabold text-center text-[#241533] mb-10">Cum funcționează?</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-5 gap-0 sm:gap-2 items-start relative">
+    <div class="text-center relative px-2">
+      <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">1</span>
+      <div class="rounded-2xl overflow-hidden grad-1 aspect-square flex items-center justify-center text-5xl">
+        🦴
+      </div>
+      <p class="mt-3 text-sm font-medium text-slate-700">Alegi produsul preferat</p>
+      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+    </div>
+    <div class="text-center relative px-2">
+      <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">2</span>
+      <div class="rounded-2xl overflow-hidden grad-2 aspect-square flex items-center justify-center text-5xl">
+        🎨
+      </div>
+      <p class="mt-3 text-sm font-medium text-slate-700">Personalizezi culoarea, numele sau mesajul</p>
+      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+    </div>
+    <div class="text-center relative px-2">
+      <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">3</span>
+      <div class="rounded-2xl overflow-hidden grad-4 aspect-square flex items-center justify-center text-5xl">
+        👀
+      </div>
+      <p class="mt-3 text-sm font-medium text-slate-700">Vezi previzualizarea în timp real</p>
+      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+    </div>
+    <div class="text-center relative px-2">
+      <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">4</span>
+      <div class="rounded-2xl overflow-hidden grad-dark aspect-square flex items-center justify-center text-5xl">
+        🖨️
+      </div>
+      <p class="mt-3 text-sm font-medium text-slate-700">Noi imprimăm cu grijă și pasiune</p>
+      <span class="hidden sm:flex absolute top-[45px] -right-4 z-10 w-7 h-7 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-400 text-xs">→</span>
+    </div>
+    <div class="text-center relative px-2">
+      <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 grad-brand text-white w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center shadow-md">5</span>
+      <div class="rounded-2xl overflow-hidden grad-brand aspect-square flex items-center justify-center">
+        <img src="img/step_box.png" alt="Cutie MORFI" class="w-full h-full object-cover">
+      </div>
+      <p class="mt-3 text-sm font-medium text-slate-700">Primești rapid la tine acasă</p>
+    </div>
+  </div>
+</section>
+
+<!-- Collections -->
+<section class="max-w-[1280px] mx-auto px-6 py-8">
+  <h2 class="text-2xl font-extrabold text-[#241533] mb-6">Descoperă colecțiile noastre</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/col_kids_dragon.png" class="w-full h-full object-cover" alt="MORFI Kids">
+      </div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Kids</div>
+      <div class="text-slate-400 text-xs mb-3">Produse creative pentru copii</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden grad-2 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🏠</div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Home</div>
+      <div class="text-slate-400 text-xs mb-3">Decorațiuni și accesorii pentru casă</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🎁</div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Gifts</div>
+      <div class="text-slate-400 text-xs mb-3">Cadouri personalizate pentru orice ocazie</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🖊️</div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Office</div>
+      <div class="text-slate-400 text-xs mb-3">Organizare și accesorii pentru birou</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
+        <img src="img/col_pets.png" class="w-full h-full object-cover" alt="MORFI Pets">
+      </div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Pets</div>
+      <div class="text-slate-400 text-xs mb-3">Accesorii personalizate pentru animale</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+    <div class="text-center">
+      <div class="rounded-2xl overflow-hidden grad-6 aspect-square mb-3 flex items-center justify-center text-5xl shadow-sm">🧵</div>
+      <div class="font-semibold text-slate-800 text-sm">MORFI Lab</div>
+      <div class="text-slate-400 text-xs mb-3">Filamente și accesorii pentru pasionați</div>
+      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
+    </div>
+  </div>
+  <div class="text-right mt-4">
+    <a href="#" class="text-[#6b3fa0] text-sm font-semibold">Vezi toate colecțiile →</a>
+  </div>
+</section>
+
+<!-- Bestsellers -->
+<section class="max-w-[1280px] mx-auto px-6 py-8">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-extrabold text-[#241533]">Bestsellere 🔥</h2>
+    <div class="flex items-center gap-3">
+      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center">←</button>
+      <button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center">→</button>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <span class="absolute top-5 left-5 bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-md">Bestseller</span>
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/col_kids_dragon.png" class="w-full h-full object-cover" alt="Dragon Articulat">
+      </div>
+      <div class="font-semibold text-sm text-slate-800">Dragon Articulat Mythic Series</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(24)</span></div>
+      <div class="font-bold text-slate-800">149,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl">🦄</div>
+      <div class="font-semibold text-sm text-slate-800">Suport Pixuri Unicorn</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(18)</span></div>
+      <div class="font-bold text-slate-800">69,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden grad-dark aspect-square mb-3 flex items-center justify-center text-5xl">💡</div>
+      <div class="font-semibold text-sm text-slate-800">Lampă de Veghe MORFI</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(37)</span></div>
+      <div class="font-bold text-slate-800">119,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl">🦴</div>
+      <div class="font-semibold text-sm text-slate-800">Breloc Personalizat cu Nume</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(52)</span></div>
+      <div class="font-bold text-slate-800">49,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden grad-4 aspect-square mb-3 flex items-center justify-center text-5xl">🖊️</div>
+      <div class="font-semibold text-sm text-slate-800">Organizer Birou Modular</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(21)</span></div>
+      <div class="font-bold text-slate-800">99,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 relative">
+      <button class="absolute top-5 right-5 text-slate-300">🤍</button>
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/step_box.png" class="w-full h-full object-cover" alt="Cutie Amintiri">
+      </div>
+      <div class="font-semibold text-sm text-slate-800">Cutie Amintiri Personalizată</div>
+      <div class="text-amber-400 text-xs my-1">★★★★★ <span class="text-slate-400">(16)</span></div>
+      <div class="font-bold text-slate-800">129,00 lei</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews / Newsletter banner -->
+<section class="max-w-[1280px] mx-auto px-6 py-8">
+  <div class="grid lg:grid-cols-3 gap-5">
+    <div class="grad-brand rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg shadow-purple-200">
+      <div>
+        <h3 class="text-xl font-bold">Oameni fericiți, produse create cu pasiune 💜</h3>
+      </div>
+      <button class="mt-6 bg-white text-[#6b3fa0] font-semibold text-sm px-5 py-2.5 rounded-full w-fit">Vezi recenziile</button>
+    </div>
+    <div class="rounded-2xl overflow-hidden grid grid-cols-3 gap-1">
+      <div class="grad-3 flex items-center justify-center text-4xl">😊</div>
+      <div class="grad-5 flex items-center justify-center text-4xl">🥰</div>
+      <div class="grad-6 flex items-center justify-center text-4xl">😄</div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-1 text-center">
+      <div class="text-3xl font-extrabold">4.9 / 5</div>
+      <div class="text-amber-400">★★★★★</div>
+      <div class="text-slate-400 text-xs">Bazat pe 1.520 de recenzii</div>
+      <div class="flex items-center gap-3 mt-2 text-slate-400 text-lg">
+        <span>G</span><span>📘</span><span>🎵</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 grad-1 rounded-2xl p-6 flex items-center justify-between gap-6 flex-wrap">
+    <div>
+      <h3 class="text-lg font-bold text-[#241533]">10% reducere la prima comandă</h3>
+      <p class="text-slate-500 text-sm">Abonează-te și primești instant codul de reducere!</p>
+    </div>
+    <div class="flex items-center gap-2 flex-1 min-w-[280px] max-w-md">
+      <input type="email" placeholder="Emailul tău" class="flex-1 rounded-full px-4 py-2.5 border border-slate-200 text-sm bg-white/70">
+      <button class="grad-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full whitespace-nowrap shadow-md shadow-purple-200">Abonează-te</button>
+    </div>
+    <div class="w-10 h-10 rounded-full grad-brand flex items-center justify-center text-white shadow-md">🤖</div>
+  </div>
+</section>
+
+<!-- Gift bundles -->
+<section class="max-w-[1280px] mx-auto px-6 py-8">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-extrabold text-[#241533]">Pachete cadou gata de bucurie</h2>
+    <a href="#" class="text-[#6b3fa0] text-sm font-semibold">Vezi toate pachetele →</a>
+  </div>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
+      <div class="rounded-xl overflow-hidden aspect-square mb-3">
+        <img src="img/step_box.png" class="w-full h-full object-cover" alt="Back to School Box">
+      </div>
+      <div class="font-semibold text-sm text-slate-800">Back to School Box</div>
+      <div class="font-bold text-slate-800 mt-1">129,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
+      <div class="rounded-xl overflow-hidden grad-3 aspect-square mb-3 flex items-center justify-center text-5xl">🎂</div>
+      <div class="font-semibold text-sm text-slate-800">Birthday Box</div>
+      <div class="font-bold text-slate-800 mt-1">149,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
+      <div class="rounded-xl overflow-hidden grad-dark aspect-square mb-3 flex items-center justify-center text-5xl">🎮</div>
+      <div class="font-semibold text-sm text-slate-800">Gamer Box</div>
+      <div class="font-bold text-slate-800 mt-1">159,00 lei</div>
+    </div>
+    <div class="border border-slate-100 rounded-2xl p-3 hover:shadow-lg hover:shadow-purple-100 transition-shadow">
+      <div class="rounded-xl overflow-hidden grad-1 aspect-square mb-3 flex items-center justify-center text-5xl">👶</div>
+      <div class="font-semibold text-sm text-slate-800">Baby Gift Box</div>
+      <div class="font-bold text-slate-800 mt-1">139,00 lei</div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment/service strip -->
+<section class="max-w-[1280px] mx-auto px-6 py-6 border-t border-slate-100">
+  <div class="grid grid-cols-2 sm:grid-cols-5 gap-6">
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🔒</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Plată securizată</div>
+        <div class="text-slate-400 text-xs">100% sigură</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xl">↩️</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Retur simplu</div>
+        <div class="text-slate-400 text-xs">în 14 zile</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🎧</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Suport clienți</div>
+        <div class="text-slate-400 text-xs">Rapid și prietenos</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🚚</span>
+      <div class="text-sm leading-tight">
+        <div class="font-semibold">Livrare rapidă</div>
+        <div class="text-slate-400 text-xs">1-3 zile lucrătoare</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-[#241533] to-[#160d21] text-white mt-6">
+  <div class="max-w-[1280px] mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <div class="flex items-center gap-2.5 mb-3">
+        <div class="w-9 h-9 rounded-full grad-brand flex items-center justify-center text-white">🤖</div>
+        <div>
+          <div class="text-lg font-extrabold leading-none">MORFI</div>
+          <div class="text-[8px] tracking-[0.15em] text-slate-400">DĂ FORMĂ IDEILOR TALE</div>
+        </div>
+      </div>
+      <p class="text-slate-400 text-sm leading-relaxed">MORFI este locul unde creativitatea întâlnește tehnologia. Imprimăm idei, creăm emoții și aducem bucurie.</p>
+      <div class="flex items-center gap-3 mt-4 text-slate-300">
+        <span>📘</span><span>📷</span><span>🎵</span>
+      </div>
+    </div>
+    <div>
+      <div class="font-semibold mb-3">MAGAZIN</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href="#">Toate produsele</a></li>
+        <li><a href="#">Noutăți</a></li>
+        <li><a href="#">Bestsellere</a></li>
+        <li><a href="#">Cadouri</a></li>
+        <li><a href="#">Idei de cadou</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold mb-3">INFORMAȚII</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href="#">Despre noi</a></li>
+        <li><a href="#">Livrare și retur</a></li>
+        <li><a href="#">Retur și rambursare</a></li>
+        <li><a href="#">Termeni și condiții</a></li>
+        <li><a href="#">Politica de confidențialitate</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold mb-3">AJUTOR</div>
+      <ul class="space-y-2 text-sm text-slate-400 mb-4">
+        <li><a href="#">Întrebări frecvente</a></li>
+        <li><a href="#">Ghid de utilizare</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-[1280px] mx-auto px-6 py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="text-slate-400 text-xs">© 2024 MORFI. Toate drepturile rezervate.</div>
+    <div class="flex items-center gap-3 text-2xl">
+      <span>VISA</span><span>●●</span><span></span><span>G</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
