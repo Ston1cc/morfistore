@@ -26,10 +26,6 @@
   .grad-brand { background: linear-gradient(135deg, #8b5cf6 0%, #7c3fbf 45%, #5b2f8f 100%); }
   .icon-o { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .icon-f { fill: currentColor; stroke: none; }
-  .hero-blend {
-    -webkit-mask-image: radial-gradient(ellipse 60% 62% at center, black 35%, transparent 100%);
-    mask-image: radial-gradient(ellipse 60% 62% at center, black 35%, transparent 100%);
-  }
 </style>
 </head>
 <body class="bg-white text-slate-900 bg-mesh">
@@ -56,6 +52,7 @@
 <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01z"/></symbol>
 <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></symbol>
 <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12.5 2c1 3-2 4.5-2 8a3.5 3.5 0 007 0c0-1.5-.5-2.5-.5-2.5s1.5 1 1.5 4a5.5 5.5 0 01-11 0c0-6 4-7 5-9.5z"/></symbol>
 <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
 <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></symbol>
@@ -90,14 +87,8 @@
 <!-- Header / Nav -->
 <header class="border-b border-slate-100 relative">
   <div class="max-w-[1280px] mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-    <a href="#" class="flex items-center gap-2 sm:gap-2.5">
-      <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full grad-brand shadow-md shadow-purple-200 flex items-center justify-center text-white shrink-0">
-        <svg class="w-5 h-5 sm:w-6 sm:h-6 icon-o"><use href="#i-bot"/></svg>
-      </div>
-      <div>
-        <div class="text-lg sm:text-2xl font-extrabold tracking-tight text-[#2b1a3d] leading-none">MORFI</div>
-        <div class="hidden sm:block text-[9px] tracking-[0.15em] text-slate-400 font-medium">DĂ FORMĂ IDEILOR TALE</div>
-      </div>
+    <a href="#" class="flex items-center">
+      <img src="img/logo-trimmed.png" alt="MORFI - Dă formă ideilor tale" class="h-14 sm:h-16 w-auto">
     </a>
 
     <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-700">
@@ -150,9 +141,9 @@
 
 <main>
 <!-- Hero -->
-<section class="relative max-w-[1280px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-8 overflow-hidden">
+<section class="relative max-w-[1280px] mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-10 sm:pb-14 overflow-hidden lg:overflow-visible">
   <div class="absolute inset-0 -z-10" style="background: radial-gradient(70% 95% at 76% 45%, rgba(237,233,254,0.95), rgba(237,233,254,0) 72%), linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(243,232,255,0.65) 100%);"></div>
-  <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+  <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
     <div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-[#241533]">
         Transformăm ideile tale <span class="text-[#6b3fa0]">în obiecte unice.</span>
@@ -161,9 +152,9 @@
         Produse 3D personalizate pentru copii, casă, birou și cadouri memorabile.
       </p>
       <ul class="mt-5 space-y-2 text-slate-600 text-sm sm:text-base">
-        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0] shrink-0" stroke-width="2.5"><use href="#i-check"/></svg> Personalizare în câteva minute</li>
-        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0] shrink-0" stroke-width="2.5"><use href="#i-check"/></svg> Materiale sigure pentru copii</li>
-        <li class="flex items-center gap-2"><svg class="w-4 h-4 icon-o text-[#6b3fa0] shrink-0" stroke-width="2.5"><use href="#i-check"/></svg> Livrare rapidă în România</li>
+        <li class="flex items-center gap-2"><svg class="w-[18px] h-[18px] icon-o text-[#6b3fa0] shrink-0" stroke-width="2"><use href="#i-check-circle"/></svg> Personalizare în câteva minute</li>
+        <li class="flex items-center gap-2"><svg class="w-[18px] h-[18px] icon-o text-[#6b3fa0] shrink-0" stroke-width="2"><use href="#i-check-circle"/></svg> Materiale sigure pentru copii</li>
+        <li class="flex items-center gap-2"><svg class="w-[18px] h-[18px] icon-o text-[#6b3fa0] shrink-0" stroke-width="2"><use href="#i-check-circle"/></svg> Livrare rapidă în România</li>
       </ul>
       <button class="mt-6 sm:mt-7 w-full sm:w-auto justify-center grad-brand text-white font-semibold px-7 py-3.5 sm:py-4 rounded-xl flex items-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-300/60 transition-shadow">
         Creează produsul tău <svg class="w-4 h-4 icon-o" stroke-width="2.5"><use href="#i-arrow-right"/></svg>
@@ -181,16 +172,19 @@
       </div>
     </div>
 
-    <div class="relative lg:-mr-10">
-      <div class="aspect-[6/5] flex items-center justify-center">
-        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-contain hero-blend lg:scale-[1.0625]">
+    <div class="relative lg:-mr-[max(2.5rem,calc((100vw_-_1280px)/2_+_1.5rem))]">
+      <div class="aspect-[16/10] sm:aspect-[2/1] rounded-3xl lg:rounded-r-none overflow-hidden shadow-xl shadow-purple-200/60">
+        <img src="img/hero.png" alt="MORFI mascotă și imprimantă 3D" class="w-full h-full object-cover">
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-[#f0e6ff] to-transparent"></div>
       </div>
       <div class="absolute -bottom-4 sm:-bottom-6 right-2 sm:right-10 bg-white rounded-2xl shadow-lg px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3">
-        <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full grad-3 -mr-2 border-2 border-white flex items-center justify-center text-white shrink-0"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 icon-o"><use href="#i-user"/></svg></div>
-        <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full grad-5 border-2 border-white flex items-center justify-center text-white shrink-0"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 icon-o"><use href="#i-user"/></svg></div>
+        <div class="flex items-center">
+          <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full grad-3 -mr-2 border-2 border-white shrink-0"></div>
+          <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full grad-5 border-2 border-white shrink-0"></div>
+        </div>
         <div class="text-xs sm:text-sm leading-tight">
           <div class="font-semibold text-slate-800">Peste 4.000 de produse</div>
-          <div class="text-slate-500 flex items-center gap-1">livrate cu drag <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 icon-f text-pink-300"><use href="#i-heart"/></svg></div>
+          <div class="text-slate-500 flex items-center gap-1">livrate cu drag <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 icon-o text-pink-300" stroke-width="2.5"><use href="#i-heart"/></svg></div>
         </div>
       </div>
     </div>
@@ -287,7 +281,7 @@
 <!-- Collections -->
 <section class="max-w-[1280px] mx-auto px-4 sm:px-6 py-8">
   <h2 class="text-2xl font-extrabold text-[#241533] mb-6">Descoperă colecțiile noastre</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
     <div class="text-center">
       <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
         <img src="img/col_kids_dragon.png" class="w-full h-full object-cover" alt="MORFI Kids">
@@ -318,22 +312,6 @@
       </div>
       <div class="font-semibold text-slate-800 text-sm">MORFI Office</div>
       <div class="text-slate-500 text-xs mb-3">Organizare și accesorii pentru birou</div>
-      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
-    </div>
-    <div class="text-center">
-      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
-        <img src="img/col_pets.png" class="w-full h-full object-cover" alt="MORFI Pets">
-      </div>
-      <div class="font-semibold text-slate-800 text-sm">MORFI Pets</div>
-      <div class="text-slate-500 text-xs mb-3">Accesorii personalizate pentru animale</div>
-      <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
-    </div>
-    <div class="text-center">
-      <div class="rounded-2xl overflow-hidden aspect-square mb-3 shadow-sm">
-        <img src="img/col_lab.png" class="w-full h-full object-cover" alt="MORFI Lab">
-      </div>
-      <div class="font-semibold text-slate-800 text-sm">MORFI Lab</div>
-      <div class="text-slate-500 text-xs mb-3">Filamente și accesorii pentru pasionați</div>
       <button class="border border-[#6b3fa0] text-[#6b3fa0] text-xs font-semibold px-4 py-1.5 rounded-full hover:bg-[#6b3fa0] hover:text-white transition-colors">Vezi produse</button>
     </div>
   </div>
