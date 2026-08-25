@@ -1,0 +1,58 @@
+import { formatPrice, escapeHtml } from "./format.js";
+import { computeSubtotal, getTotalCount } from "./cart.js";
+
+function productImage(product) {
+  const first = Array.isArray(product.images) ? product.images[0] : null;
+  return first || "img/step_keychain.png";
+}
+
+function cartRowHtml(productId, qty, product) {
+  const lineTotal = product.price * qty;
+  return `
+    <div class="flex gap-3 items-center">
+      <img src="${escapeHtml(productImage(product))}" class="w-16 h-16 rounded-lg object-cover shrink-0" alt="${escapeHtml(product.name)}">
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-sm text-slate-800 truncate">${escapeHtml(product.name)}</div>
+        <div class="text-slate-500 text-xs">${formatPrice(product.price)}</div>
+        <div class="flex items-center gap-2 mt-1.5">
+          <button class="qty-decr w-6 h-6 rounded-full border border-slate-200 text-slate-600 leading-none" data-product-id="${productId}" aria-label="Scade cantitatea">−</button>
+          <span class="text-sm w-5 text-center">${qty}</span>
+          <button class="qty-incr w-6 h-6 rounded-full border border-slate-200 text-slate-600 leading-none" data-product-id="${productId}" aria-label="Crește cantitatea">+</button>
+          <button class="remove-item text-slate-400 hover:text-red-500 ml-2 text-xs" data-product-id="${productId}">Elimină</button>
+        </div>
+      </div>
+      <div class="font-bold text-slate-800 text-sm shrink-0">${formatPrice(lineTotal)}</div>
+    </div>
+  `;
+}
+
+export function renderCart(cart, productsById) {
+  const itemsContainer = document.getElementById("cart-items");
+  const entries = Object.entries(cart).filter(([id]) => productsById[id]);
+
+  itemsContainer.innerHTML = entries.length
+    ? entries.map(([id, qty]) => cartRowHtml(id, qty, productsById[id])).join("")
+    : `<p class="text-slate-500 text-center py-8">Coșul tău e gol.</p>`;
+
+  const subtotal = computeSubtotal(cart, productsById);
+  const count = getTotalCount(cart);
+
+  document.querySelectorAll(".cart-subtotal").forEach((el) => (el.textContent = formatPrice(subtotal)));
+  document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = count));
+
+  const checkoutBtn = document.getElementById("cart-checkout-btn");
+  if (checkoutBtn) {
+    checkoutBtn.classList.toggle("pointer-events-none", entries.length === 0);
+    checkoutBtn.classList.toggle("opacity-50", entries.length === 0);
+  }
+}
+
+export function openCart() {
+  document.getElementById("cart-drawer").classList.remove("translate-x-full");
+  document.getElementById("cart-backdrop").classList.remove("hidden");
+}
+
+export function closeCart() {
+  document.getElementById("cart-drawer").classList.add("translate-x-full");
+  document.getElementById("cart-backdrop").classList.add("hidden");
+}
