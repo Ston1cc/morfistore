@@ -6,9 +6,20 @@
 <title>MORFI - Dă formă ideilor tale</title>
 <meta name="description" content="MORFI - produse 3D personalizate pentru copii, casă, birou și cadouri memorabile. Personalizare rapidă, materiale sigure, livrare rapidă în România.">
 <script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { darkMode: 'class' };</script>
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored === 'dark' || (!stored && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { font-family: 'Poppins', sans-serif; }
   .bg-mesh {
     background:
@@ -26,6 +37,34 @@
   .grad-brand { background: linear-gradient(135deg, #8b5cf6 0%, #7c3fbf 45%, #5b2f8f 100%); }
   .icon-o { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .icon-f { fill: currentColor; stroke: none; }
+
+  /* Dark mode: overrides keyed on the existing utility classes, via
+     attribute selectors, rather than adding dark: to every element —
+     this page uses a lot of one-off hex utilities (text-[#241533] etc)
+     that dark: would need repeating everywhere anyway. */
+  .dark body { background-color: #140b1f; }
+  .dark .bg-mesh {
+    background:
+      radial-gradient(600px circle at 85% 0%, rgba(139,92,246,0.18), transparent 60%),
+      radial-gradient(500px circle at 0% 30%, rgba(219,39,119,0.10), transparent 55%),
+      radial-gradient(700px circle at 100% 70%, rgba(107,63,160,0.18), transparent 55%);
+  }
+  .dark [class~="bg-white"] { background-color: #1c1330; }
+  .dark [class~="bg-white/95"] { background-color: rgba(20,11,31,0.9); }
+  .dark [class~="bg-white/70"] { background-color: rgba(28,19,48,0.7); }
+  .dark [class~="bg-white/90"] { background-color: rgba(28,19,48,0.85); }
+  .dark [class~="bg-slate-50"] { background-color: #201735; }
+  .dark [class~="border-slate-100"] { border-color: #2e2242; }
+  .dark [class~="border-slate-200"] { border-color: #3a2b52; }
+  .dark [class~="text-slate-900"] { color: #f3ecff; }
+  .dark [class~="text-slate-800"] { color: #e5dcf5; }
+  .dark [class~="text-slate-700"] { color: #d8cdea; }
+  .dark [class~="text-slate-600"] { color: #c9bcdf; }
+  .dark [class~="text-slate-500"] { color: #a898c4; }
+  .dark [class~="text-slate-400"] { color: #8b7aab; }
+  .dark [class~="text-[#241533]"] { color: #f3ecff; }
+  .dark [class~="grad-1"] { background: linear-gradient(135deg, #241533 0%, #2e1f42 55%, #3a2b52 100%); }
+  .dark [class~="border-white/10"] { border-color: rgba(255,255,255,0.08); }
 </style>
 </head>
 <body class="bg-white text-slate-900 bg-mesh">
@@ -64,6 +103,8 @@
 <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 21v-6a2 2 0 012-2h12a2 2 0 012 2v6"/><path d="M4 21h16"/><path d="M4 15a4 4 0 018 0 4 4 0 018 0"/><line x1="9" y1="6" x2="9" y2="9"/><line x1="15" y1="6" x2="15" y2="9"/><circle cx="9" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="4" r="1" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="18" cy="11" r="1" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
 </defs>
 </svg>
 
@@ -100,6 +141,10 @@
     </nav>
 
     <div class="flex items-center gap-3 sm:gap-5 text-slate-700">
+      <button id="theme-toggle" aria-label="Comută tema">
+        <svg class="w-5 h-5 icon-o dark:hidden"><use href="#i-moon"/></svg>
+        <svg class="w-5 h-5 icon-o hidden dark:inline"><use href="#i-sun"/></svg>
+      </button>
       <button aria-label="search" class="hidden sm:inline-flex"><svg class="w-5 h-5 icon-o"><use href="#i-search"/></svg></button>
       <button aria-label="account" class="hidden sm:inline-flex"><svg class="w-5 h-5 icon-o"><use href="#i-user"/></svg></button>
       <button aria-label="wishlist" class="hidden sm:inline-flex"><svg class="w-5 h-5 icon-o"><use href="#i-heart"/></svg></button>
@@ -124,6 +169,11 @@
       <button aria-label="search" class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-5 h-5 icon-o"><use href="#i-search"/></svg>Caută</button>
       <button aria-label="account" class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-5 h-5 icon-o"><use href="#i-user"/></svg>Cont</button>
       <button aria-label="wishlist" class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-5 h-5 icon-o"><use href="#i-heart"/></svg>Favorite</button>
+      <button id="theme-toggle-mobile" aria-label="Comută tema" class="flex items-center gap-2 text-sm text-slate-600">
+        <svg class="w-5 h-5 icon-o dark:hidden"><use href="#i-moon"/></svg>
+        <svg class="w-5 h-5 icon-o hidden dark:inline"><use href="#i-sun"/></svg>
+        Temă
+      </button>
     </div>
     <a href="#" class="sm:hidden mt-4 grad-brand text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-purple-200 w-full text-center block">Comandă acum</a>
   </div>
@@ -132,6 +182,13 @@
   document.getElementById('menu-btn').addEventListener('click', function () {
     document.getElementById('mobile-menu').classList.toggle('hidden');
   });
+
+  function toggleTheme() {
+    var isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
 </script>
 
 <main>
