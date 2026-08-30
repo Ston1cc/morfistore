@@ -46,8 +46,8 @@ function init() {
     refreshCart();
   }
 
-  document.getElementById("cart-items").addEventListener("click", handleQtyClick);
-  document.getElementById("cart-summary-visual").addEventListener("click", handleQtyClick);
+  document.getElementById("cart-items")?.addEventListener("click", handleQtyClick);
+  document.getElementById("cart-summary-visual")?.addEventListener("click", handleQtyClick);
 
   initContactForm(() => {
     cart = loadCart();
