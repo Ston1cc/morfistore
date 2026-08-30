@@ -30,7 +30,7 @@ function init() {
     openCart();
   });
 
-  document.getElementById("cart-items").addEventListener("click", (e) => {
+  function handleQtyClick(e) {
     const productId = e.target.closest("[data-product-id]")?.dataset.productId;
     if (!productId) return;
 
@@ -44,7 +44,10 @@ function init() {
       return;
     }
     refreshCart();
-  });
+  }
+
+  document.getElementById("cart-items").addEventListener("click", handleQtyClick);
+  document.getElementById("cart-summary-visual").addEventListener("click", handleQtyClick);
 
   initContactForm(() => {
     cart = loadCart();

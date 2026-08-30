@@ -13,7 +13,9 @@ function cartRowHtml(productId, item) {
           <button class="qty-decr w-6 h-6 rounded-full border border-slate-200 text-slate-600 leading-none" data-product-id="${productId}" aria-label="Scade cantitatea">−</button>
           <span class="text-sm w-5 text-center">${item.quantity}</span>
           <button class="qty-incr w-6 h-6 rounded-full border border-slate-200 text-slate-600 leading-none" data-product-id="${productId}" aria-label="Crește cantitatea">+</button>
-          <button class="remove-item text-slate-400 hover:text-red-500 ml-2 text-xs" data-product-id="${productId}">Elimină</button>
+          <button class="remove-item text-red-400 hover:text-red-600 ml-2" data-product-id="${productId}" aria-label="Elimină ${escapeHtml(item.name)}">
+            <svg class="w-4 h-4 icon-o" viewBox="0 0 24 24" stroke-width="2"><use href="#i-trash"/></svg>
+          </button>
         </div>
       </div>
       <div class="font-bold text-slate-800 text-sm shrink-0">${formatPrice(lineTotal)}</div>
